@@ -13,6 +13,8 @@ namespace CarCheckpoint.Controllers
     {
         public List<AdminSettings> GetSettings() => Admin.GetSettings();
 
+        public List<WriteOff> GetWriteOffs() => Users.GetAllWriteOff();
+
         public IHttpActionResult ChangeSettings(List<AdminSettings> settings)
         {
             if (Admin.ChangeSettings(settings))

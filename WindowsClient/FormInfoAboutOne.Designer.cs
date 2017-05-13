@@ -37,29 +37,29 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.surnameTextBox = new System.Windows.Forms.TextBox();
+            this.phoneTextBox = new System.Windows.Forms.TextBox();
+            this.adressTextBox = new System.Windows.Forms.TextBox();
+            this.birthdayTextBox = new System.Windows.Forms.TextBox();
+            this.ballanceTextBox = new System.Windows.Forms.TextBox();
+            this.carTextBox = new System.Windows.Forms.TextBox();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.paymentsGridView = new System.Windows.Forms.DataGridView();
             this.DateCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PriceCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.entrancesDataGrid = new System.Windows.Forms.DataGridView();
             this.DateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CountCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.cardsGridView = new System.Windows.Forms.DataGridView();
             this.CardCol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entrancesDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -69,6 +69,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 24);
             this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -142,54 +143,54 @@
             this.label8.TabIndex = 8;
             this.label8.Text = "Car number";
             // 
-            // textBox1
+            // nameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(231, 65);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(121, 22);
-            this.textBox1.TabIndex = 9;
+            this.nameTextBox.Location = new System.Drawing.Point(231, 65);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(121, 22);
+            this.nameTextBox.TabIndex = 9;
             // 
-            // textBox2
+            // surnameTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(231, 107);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 22);
-            this.textBox2.TabIndex = 10;
+            this.surnameTextBox.Location = new System.Drawing.Point(231, 107);
+            this.surnameTextBox.Name = "surnameTextBox";
+            this.surnameTextBox.Size = new System.Drawing.Size(121, 22);
+            this.surnameTextBox.TabIndex = 10;
             // 
-            // textBox3
+            // phoneTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(231, 154);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 22);
-            this.textBox3.TabIndex = 11;
+            this.phoneTextBox.Location = new System.Drawing.Point(231, 154);
+            this.phoneTextBox.Name = "phoneTextBox";
+            this.phoneTextBox.Size = new System.Drawing.Size(121, 22);
+            this.phoneTextBox.TabIndex = 11;
             // 
-            // textBox4
+            // adressTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(231, 200);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 22);
-            this.textBox4.TabIndex = 12;
+            this.adressTextBox.Location = new System.Drawing.Point(231, 200);
+            this.adressTextBox.Name = "adressTextBox";
+            this.adressTextBox.Size = new System.Drawing.Size(121, 22);
+            this.adressTextBox.TabIndex = 12;
             // 
-            // textBox5
+            // birthdayTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(231, 245);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(121, 22);
-            this.textBox5.TabIndex = 13;
+            this.birthdayTextBox.Location = new System.Drawing.Point(231, 245);
+            this.birthdayTextBox.Name = "birthdayTextBox";
+            this.birthdayTextBox.Size = new System.Drawing.Size(121, 22);
+            this.birthdayTextBox.TabIndex = 13;
             // 
-            // textBox6
+            // ballanceTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(231, 296);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(121, 22);
-            this.textBox6.TabIndex = 14;
+            this.ballanceTextBox.Location = new System.Drawing.Point(231, 296);
+            this.ballanceTextBox.Name = "ballanceTextBox";
+            this.ballanceTextBox.Size = new System.Drawing.Size(121, 22);
+            this.ballanceTextBox.TabIndex = 14;
             // 
-            // textBox7
+            // carTextBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(231, 349);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(121, 22);
-            this.textBox7.TabIndex = 15;
+            this.carTextBox.Location = new System.Drawing.Point(231, 349);
+            this.carTextBox.Name = "carTextBox";
+            this.carTextBox.Size = new System.Drawing.Size(121, 22);
+            this.carTextBox.TabIndex = 15;
             // 
             // monthCalendar1
             // 
@@ -197,21 +198,21 @@
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 16;
             // 
-            // dataGridView1
+            // paymentsGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.paymentsGridView.AllowUserToAddRows = false;
+            this.paymentsGridView.AllowUserToDeleteRows = false;
+            this.paymentsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.paymentsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DateCol,
             this.PriceCol});
-            this.dataGridView1.Location = new System.Drawing.Point(39, 509);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 17;
+            this.paymentsGridView.Location = new System.Drawing.Point(39, 509);
+            this.paymentsGridView.Name = "paymentsGridView";
+            this.paymentsGridView.ReadOnly = true;
+            this.paymentsGridView.RowHeadersVisible = false;
+            this.paymentsGridView.RowTemplate.Height = 24;
+            this.paymentsGridView.Size = new System.Drawing.Size(240, 150);
+            this.paymentsGridView.TabIndex = 17;
             // 
             // DateCol
             // 
@@ -225,21 +226,21 @@
             this.PriceCol.Name = "PriceCol";
             this.PriceCol.ReadOnly = true;
             // 
-            // dataGridView2
+            // entrancesDataGrid
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.entrancesDataGrid.AllowUserToAddRows = false;
+            this.entrancesDataGrid.AllowUserToDeleteRows = false;
+            this.entrancesDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.entrancesDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.DateColumn,
             this.CountCol});
-            this.dataGridView2.Location = new System.Drawing.Point(359, 509);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView2.TabIndex = 18;
+            this.entrancesDataGrid.Location = new System.Drawing.Point(359, 509);
+            this.entrancesDataGrid.Name = "entrancesDataGrid";
+            this.entrancesDataGrid.ReadOnly = true;
+            this.entrancesDataGrid.RowHeadersVisible = false;
+            this.entrancesDataGrid.RowTemplate.Height = 24;
+            this.entrancesDataGrid.Size = new System.Drawing.Size(240, 150);
+            this.entrancesDataGrid.TabIndex = 18;
             // 
             // DateColumn
             // 
@@ -253,20 +254,20 @@
             this.CountCol.Name = "CountCol";
             this.CountCol.ReadOnly = true;
             // 
-            // dataGridView3
+            // cardsGridView
             // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cardsGridView.AllowUserToAddRows = false;
+            this.cardsGridView.AllowUserToDeleteRows = false;
+            this.cardsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cardsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CardCol});
-            this.dataGridView3.Location = new System.Drawing.Point(678, 509);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView3.TabIndex = 19;
+            this.cardsGridView.Location = new System.Drawing.Point(678, 509);
+            this.cardsGridView.Name = "cardsGridView";
+            this.cardsGridView.ReadOnly = true;
+            this.cardsGridView.RowHeadersVisible = false;
+            this.cardsGridView.RowTemplate.Height = 24;
+            this.cardsGridView.Size = new System.Drawing.Size(240, 150);
+            this.cardsGridView.TabIndex = 19;
             // 
             // CardCol
             // 
@@ -280,9 +281,9 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(72, 442);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(102, 17);
+            this.label9.Size = new System.Drawing.Size(70, 17);
             this.label9.TabIndex = 20;
-            this.label9.Text = "Replenishment";
+            this.label9.Text = "Payments";
             // 
             // label10
             // 
@@ -320,17 +321,17 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.dataGridView3);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.cardsGridView);
+            this.Controls.Add(this.entrancesDataGrid);
+            this.Controls.Add(this.paymentsGridView);
             this.Controls.Add(this.monthCalendar1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.carTextBox);
+            this.Controls.Add(this.ballanceTextBox);
+            this.Controls.Add(this.birthdayTextBox);
+            this.Controls.Add(this.adressTextBox);
+            this.Controls.Add(this.phoneTextBox);
+            this.Controls.Add(this.surnameTextBox);
+            this.Controls.Add(this.nameTextBox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -343,9 +344,9 @@
             this.Name = "FormInfoAboutOne";
             this.Text = "FormInfoAboutOne";
             this.Load += new System.EventHandler(this.FormInfoAboutOne_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paymentsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.entrancesDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cardsGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,21 +363,21 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox nameTextBox;
+        private System.Windows.Forms.TextBox surnameTextBox;
+        private System.Windows.Forms.TextBox phoneTextBox;
+        private System.Windows.Forms.TextBox adressTextBox;
+        private System.Windows.Forms.TextBox birthdayTextBox;
+        private System.Windows.Forms.TextBox ballanceTextBox;
+        private System.Windows.Forms.TextBox carTextBox;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView paymentsGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn PriceCol;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView entrancesDataGrid;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CountCol;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView cardsGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn CardCol;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;

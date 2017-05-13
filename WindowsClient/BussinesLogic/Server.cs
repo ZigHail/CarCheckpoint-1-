@@ -33,6 +33,16 @@ namespace WindowsClient.BussinesLogic
             }
         }
 
+        public static User GetUserInGarage(string garage)
+        {
+            using (var client = new HttpClient())
+            {
+                var response = client.GetAsync($"{APP_PATH}/users/GetUserByGarage/{garage}").Result;
+                var result = response.Content.ReadAsStringAsync().Result;
+                return JsonConvert.DeserializeObject<User>(result);
+            }
+        }
+
         public static List<User> GetAllUsers()
         {
             using (var client = new HttpClient())
@@ -50,6 +60,16 @@ namespace WindowsClient.BussinesLogic
                 var response = client.GetAsync($"{APP_PATH}/admin/GetSettings/").Result;
                 var result = response.Content.ReadAsStringAsync().Result;
                 return JsonConvert.DeserializeObject<List<AdminSettings>>(result);
+            }
+        }
+
+        public static List<WriteOff> GetAllWriteOff()
+        {
+            using (var client = new HttpClient())
+            {
+                var response = client.GetAsync($"{APP_PATH}/admin/GetWriteOffs/").Result;
+                var result = response.Content.ReadAsStringAsync().Result;
+                return JsonConvert.DeserializeObject<List<WriteOff>>(result);
             }
         }
 

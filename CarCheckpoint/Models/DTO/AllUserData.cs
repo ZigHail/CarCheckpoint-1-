@@ -19,12 +19,17 @@ namespace CarCheckpoint.Models.DTO
         [DataMember]
         public Entrance Entrance { get; set; }
 
-        public static User GetSelectedUser(string selectedGarage) => 
-            new CarCheckerContext().Users
-                .Include(u => u.Payments)
-                .Include(u => u.Cards)
-                .Include(u => u.Entrances)
-                .FirstOrDefault(u => u.GarageNumber == Convert.ToInt32(selectedGarage));            
-        
+        public static User GetSelectedUser(string selectedGarage)
+        {
+            var db = new CarCheckerContext();
+            var garage = Convert.ToInt32(selectedGarage);
+            var user = db.Users
+                        .Include(u => u.Payments)
+                        .Include(u => u.Cards)
+                        .Include(u => u.Entrances)
+                        .FirstOrDefault(u => u.GarageNumber == garage);
+
+            return user;
+        }
     }
 }

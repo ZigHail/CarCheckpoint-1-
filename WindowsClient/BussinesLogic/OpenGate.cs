@@ -10,17 +10,22 @@ namespace WindowsClient.BussinesLogic
     public class OpenGate
     {
         static bool firstOpen = true;
-        public static void Open(string cardId, string arduinoPortName)
+        //public static void Open(string cardId, string arduinoPortName)
+        //{
+        //    //new Action(SendCommandToArduino).BeginInvoke(null, null);
+        //}
+
+        public static void Open()
         {
-            //new Action(SendCommandToArduino).BeginInvoke(null, null);
+            new Action(SendCommandToArduino).BeginInvoke(null, null);
         }
 
-        private static void SendCommandToArduino(string arduinoPortName)
+        private static void SendCommandToArduino()
         {
             const int isReady = 4, end = 5;            
             SerialPort serialPort1 = new SerialPort()
             {
-                PortName = arduinoPortName,
+                PortName = "COM3",
                 BaudRate = 9600
             };
 
@@ -51,7 +56,7 @@ namespace WindowsClient.BussinesLogic
                 else if (answer == isReady)
                 {
                     serialPort1.Close();
-                    SendCommandToArduino(arduinoPortName);
+                    SendCommandToArduino();
                     break;
                 }
                 if (i == 14)

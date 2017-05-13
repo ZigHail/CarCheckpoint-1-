@@ -24,6 +24,8 @@ namespace CarCheckpoint.Controllers
 
         public AllUserData GetUserByCardId(string id) => Users.GetUser(id);
 
+        public User GetUserByGarage(string id) => AllUserData.GetSelectedUser(id);
+
         public IHttpActionResult AddUser([FromBody]AllUserData allData)
         {
             if (Users.Add(allData.User, allData.Card.CardId))

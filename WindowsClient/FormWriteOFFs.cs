@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsClient.BussinesLogic;
 
 namespace WindowsClient
 {
@@ -15,6 +16,20 @@ namespace WindowsClient
         public FormWriteOFFs()
         {
             InitializeComponent();
+        }
+
+        private void FormWriteOFFs_Load(object sender, EventArgs e)
+        {
+            var writeOffs = Server.GetAllWriteOff();
+
+            int i = 0;
+            foreach (var writeOff in writeOffs)
+            {
+                writeOffGridView.Rows.Add();
+                writeOffGridView.Rows[i].Cells[0].Value = writeOff.DateTime;
+                writeOffGridView.Rows[i].Cells[1].Value = writeOff.Sum;
+                i++;
+            }
         }
     }
 }

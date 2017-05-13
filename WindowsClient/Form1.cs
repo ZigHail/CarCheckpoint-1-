@@ -17,12 +17,16 @@ namespace WindowsClient
     {
         private Dictionary<string, string> adminSettings = new Dictionary<string, string>();
         const string password = "0988905606";
+        bool firstOpen = true;
         public Form1()
         {
             InitializeComponent();
 
             foreach (var admSetting in Server.GetAdminSettings())
                 adminSettings.Add(admSetting.Name, admSetting.Value);
+
+            serialPort1.PortName = adminSettings.FirstOrDefault(a => a.Key == AdminSettingsNames.USBPort).Value;
+            serialPort1.Open();
         }
 
         private void cardIdTextBox_TextChanged(object sender, EventArgs e)
@@ -49,22 +53,50 @@ namespace WindowsClient
                     KnownUser(user);
                     if (user.User.Balance >= 0)
                     {
-
-                        //cardIdTextBox.Text =  Server.AddUser(
-                        //    new User
-                        //    {
-                        //        Name = "rrr",
-                        //        Surname = "RRR",
-                        //        Balance = 55,
-                        //        GarageNumber = 26,
-                        //        Birthday = DateTime.Now
-                        //    },
-                        //    "0000000001"
-                        //);
+                        new Action(SendCommandToArduino).BeginInvoke(null, null);                    
                     }
-                }
-                
+                }                
             }
+        }
+
+
+        private void SendCommandToArduino()
+        {
+            const int isReady = 4, end = 5;  
+
+            if (serialPort1.IsOpen)
+                serialPort1.Write("5");
+
+            //serialPort1.DiscardInBuffer();
+            //if (firstOpen)
+            //{
+            //    firstOpen = false;
+            //    serialPort1.Close();
+            //    return;
+            //}
+
+            //var answer = serialPort1.ReadChar();
+
+            //for (int i = 0; i < 15; i++)
+            //{
+            //    answer = serialPort1.ReadChar();
+            //    if (answer == end)
+            //    {
+            //        serialPort1.Close();
+            //        break;
+            //    }
+            //    else if (answer == isReady)
+            //    {
+            //        serialPort1.Close();
+            //        SendCommandToArduino();
+            //        break;
+            //    }
+            //    if (i == 14)
+            //    {
+            //        serialPort1.Close();
+            //        break;
+            //    }
+            //}
         }
 
         private void KnownUser(AllUserData user)
@@ -75,6 +107,11 @@ namespace WindowsClient
             phoneLabel.Text = user.User.Phone;
             ballanceLabel.Text = user.User.Balance.ToString();
             errorLabel.Text = "";
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            serialPort1.Close();
         }
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.cardIdTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.ballanceLabel = new System.Windows.Forms.Label();
             this.rebootButton = new System.Windows.Forms.Button();
             this.errorLabel = new System.Windows.Forms.Label();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.SuspendLayout();
             // 
             // cardIdTextBox
@@ -173,6 +175,7 @@
             this.Controls.Add(this.cardIdTextBox);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,6 +196,7 @@
         private System.Windows.Forms.Label ballanceLabel;
         private System.Windows.Forms.Button rebootButton;
         private System.Windows.Forms.Label errorLabel;
+        private System.IO.Ports.SerialPort serialPort1;
     }
 }
 
